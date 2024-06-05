@@ -26,14 +26,18 @@ class ViewController: UIViewController {
     let ball6Label = UILabel()
     let plusLabel = UILabel()
     let ball7Label = UILabel()
+    let ballStackView = UIStackView()
     let bonusLabel = UILabel()
     let numberPicker = UIPickerView()
+    
+    lazy var balls = [ball1Label, ball2Label, ball3Label, ball4Label, ball5Label, ball6Label, plusLabel, ball7Label]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierachy()
         configureLayout()
         configureUI()
+        ballStackViewSettings()
     }
     
     func configureHierachy() {
@@ -44,6 +48,12 @@ class ViewController: UIViewController {
         view.addSubview(countLabel)
         view.addSubview(resultLabel)
         view.addSubview(backgroundView)
+        view.addSubview(ballStackView)
+        
+        for ball in balls {
+            ballStackView.addArrangedSubview(ball)
+        }
+        
     }
     
     func configureLayout() {
@@ -86,10 +96,15 @@ class ViewController: UIViewController {
             make.width.equalTo(view.frame.width / 2)
         }
         
-        backgroundView.snp.makeConstraints { make in
+        ballStackView.snp.makeConstraints { make in
             make.top.equalTo(resultLabel.snp.bottom).offset(28)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
-            make.height.equalTo(50)
+        }
+        
+        for ball in balls {
+            ball.snp.makeConstraints { make in
+                make.width.height.equalTo(ballStackView.snp.height)
+            }
         }
     }
     
@@ -101,9 +116,23 @@ class ViewController: UIViewController {
         dividerView.backgroundColor = .lightGray
         countLabel.backgroundColor = .yellow
         resultLabel.backgroundColor = .green
-        backgroundView.backgroundColor = .blue
+        ballStackView.backgroundColor = .blue
+        ball1Label.backgroundColor = .red
+        ball2Label.backgroundColor = .orange
+        ball3Label.backgroundColor = .yellow
+        ball4Label.backgroundColor = .green
+        ball5Label.backgroundColor = .cyan
+        ball6Label.backgroundColor = .purple
+        plusLabel.backgroundColor = .magenta
+        ball7Label.backgroundColor = .brown
     }
     
+    func ballStackViewSettings() {
+        ballStackView.axis = .horizontal
+        ballStackView.alignment = .fill
+        ballStackView.distribution = .fillEqually
+        ballStackView.spacing = 4
+    }
 
 }
 
