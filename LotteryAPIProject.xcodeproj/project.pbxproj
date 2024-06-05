@@ -14,6 +14,7 @@
 		EF79C2D12C103AD3009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C2D02C103AD3009E66BD /* Base */; };
 		EF79C2DA2C103E60009E66BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C2D92C103E60009E66BD /* SnapKit */; };
 		EF79C2DD2C103E77009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C2DC2C103E77009E66BD /* Alamofire */; };
+		EF79C2DF2C104007009E66BD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF79C2DE2C104007009E66BD /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EF79C2CD2C103AD3009E66BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF79C2D02C103AD3009E66BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF79C2D22C103AD3009E66BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF79C2DE2C104007009E66BD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		EF79C2B82C103AD2009E66BD = {
 			isa = PBXGroup;
 			children = (
+				EF79C2DE2C104007009E66BD /* .gitignore */,
 				EF79C2C32C103AD2009E66BD /* LotteryAPIProject */,
 				EF79C2C22C103AD2009E66BD /* Products */,
 			);
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF79C2CE2C103AD3009E66BD /* Assets.xcassets in Resources */,
+				EF79C2DF2C104007009E66BD /* .gitignore in Resources */,
 				EF79C2D12C103AD3009E66BD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
