@@ -16,6 +16,8 @@
 		EF79C2DD2C103E77009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C2DC2C103E77009E66BD /* Alamofire */; };
 		EF79C2DF2C104007009E66BD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF79C2DE2C104007009E66BD /* .gitignore */; };
 		EF79C2E12C104067009E66BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2E02C104067009E66BD /* APIKey.swift */; };
+		EF79C2E32C106680009E66BD /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2E22C106680009E66BD /* UITextField+.swift */; };
+		EF79C2E62C10675D009E66BD /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2E52C10675C009E66BD /* UILabel+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EF79C2D22C103AD3009E66BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF79C2DE2C104007009E66BD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EF79C2E02C104067009E66BD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EF79C2E22C106680009E66BD /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		EF79C2E52C10675C009E66BD /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		EF79C2C32C103AD2009E66BD /* LotteryAPIProject */ = {
 			isa = PBXGroup;
 			children = (
+				EF79C2E42C106688009E66BD /* Extensions */,
 				EF79C2C42C103AD2009E66BD /* AppDelegate.swift */,
 				EF79C2C62C103AD2009E66BD /* SceneDelegate.swift */,
 				EF79C2C82C103AD2009E66BD /* ViewController.swift */,
@@ -72,6 +77,15 @@
 				EF79C2E02C104067009E66BD /* APIKey.swift */,
 			);
 			path = LotteryAPIProject;
+			sourceTree = "<group>";
+		};
+		EF79C2E42C106688009E66BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF79C2E22C106680009E66BD /* UITextField+.swift */,
+				EF79C2E52C10675C009E66BD /* UILabel+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF79C2E62C10675D009E66BD /* UILabel+.swift in Sources */,
 				EF79C2C92C103AD2009E66BD /* ViewController.swift in Sources */,
+				EF79C2E32C106680009E66BD /* UITextField+.swift in Sources */,
 				EF79C2C52C103AD2009E66BD /* AppDelegate.swift in Sources */,
 				EF79C2E12C104067009E66BD /* APIKey.swift in Sources */,
 				EF79C2C72C103AD2009E66BD /* SceneDelegate.swift in Sources */,

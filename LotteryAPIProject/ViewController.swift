@@ -54,7 +54,6 @@ class ViewController: UIViewController {
         for ball in balls {
             ballStackView.addArrangedSubview(ball)
         }
-        
     }
     
     func configureLayout() {
@@ -117,8 +116,8 @@ class ViewController: UIViewController {
     
     func configureUI() {
         view.backgroundColor = .white
-        lotteryTextField.backgroundColor = .lightGray
-        infoLabel.backgroundColor = .red
+        lotteryTextField.lotteryTextField()
+        infoLabel.infoLabelUI()
         dateLabel.backgroundColor = .orange
         dividerView.backgroundColor = .lightGray
         countLabel.backgroundColor = .yellow
