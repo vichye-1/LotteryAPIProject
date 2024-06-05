@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         view.addSubview(lotteryTextField)
         view.addSubview(infoLabel)
         view.addSubview(dateLabel)
+        view.addSubview(dividerView)
     }
     
     func configureLayout() {
@@ -60,6 +61,12 @@ class ViewController: UIViewController {
             make.height.equalTo(34)
             make.width.equalTo(130)
         }
+        
+        dividerView.snp.makeConstraints { make in
+            make.top.equalTo(infoLabel.snp.bottom).offset(8)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
+            make.height.equalTo(1)
+        }
     }
     
     func configureUI() {
@@ -67,6 +74,7 @@ class ViewController: UIViewController {
         lotteryTextField.backgroundColor = .lightGray
         infoLabel.backgroundColor = .red
         dateLabel.backgroundColor = .orange
+        dividerView.backgroundColor = .lightGray
     }
     
 
