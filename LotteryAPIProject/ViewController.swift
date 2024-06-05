@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let infoLabel = UILabel()
     let dateLabel = UILabel()
     let dividerView = UIView()
+    let countLabel = UILabel()
     let resultLabel = UILabel()
     let backgroundView = UIView()
     let ball1Label = UILabel()
@@ -40,6 +41,8 @@ class ViewController: UIViewController {
         view.addSubview(infoLabel)
         view.addSubview(dateLabel)
         view.addSubview(dividerView)
+        view.addSubview(countLabel)
+        view.addSubview(resultLabel)
     }
     
     func configureLayout() {
@@ -52,20 +55,35 @@ class ViewController: UIViewController {
             make.top.equalTo(lotteryTextField.snp.bottom).offset(28)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(8)
             make.height.equalTo(34)
-            make.width.equalTo(130)
+            make.width.equalTo(view.frame.width / 2)
         }
         
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(lotteryTextField.snp.bottom).offset(28)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.height.equalTo(34)
-            make.width.equalTo(130)
+            make.width.equalTo(view.frame.width / 2)
         }
         
         dividerView.snp.makeConstraints { make in
             make.top.equalTo(infoLabel.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.height.equalTo(1)
+        }
+        
+        countLabel.snp.makeConstraints { make in
+            make.top.equalTo(dividerView.snp.bottom).offset(28)
+            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(44)
+            make.width.equalTo(view.frame.width / 2)
+        }
+        
+        resultLabel.snp.makeConstraints { make in
+            make.top.equalTo(dividerView.snp.bottom).offset(28)
+            make.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(44)
+            make.width.equalTo(view.frame.width / 2)
+            
         }
     }
     
@@ -75,6 +93,8 @@ class ViewController: UIViewController {
         infoLabel.backgroundColor = .red
         dateLabel.backgroundColor = .orange
         dividerView.backgroundColor = .lightGray
+        countLabel.backgroundColor = .yellow
+        resultLabel.backgroundColor = .green
     }
     
 
