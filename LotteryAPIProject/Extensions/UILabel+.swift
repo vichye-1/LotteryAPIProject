@@ -12,5 +12,13 @@ extension UILabel {
         self.text = "당첨번호 안내"
         self.textAlignment = .left
         self.textColor = .black
+        self.font = .systemFont(ofSize: 15)
+    }
+    
+    func dateLabelUI() {
+        self.text = "2020-05-30 추첨"
+        self.textAlignment = .right
+        self.textColor = .gray
+        self.font = .systemFont(ofSize: 13)
     }
 }

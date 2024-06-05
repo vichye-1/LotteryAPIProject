@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         }
         
         dividerView.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(8)
+            make.top.equalTo(infoLabel.snp.bottom).offset(4)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.height.equalTo(1)
         }
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         lotteryTextField.lotteryTextField()
         infoLabel.infoLabelUI()
-        dateLabel.backgroundColor = .orange
+        dateLabel.dateLabelUI()
         dividerView.backgroundColor = .lightGray
         countLabel.backgroundColor = .yellow
         resultLabel.backgroundColor = .green
