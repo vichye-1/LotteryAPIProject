@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     func configureHierachy() {
         view.addSubview(lotteryTextField)
         view.addSubview(infoLabel)
+        view.addSubview(dateLabel)
     }
     
     func configureLayout() {
@@ -50,7 +51,14 @@ class ViewController: UIViewController {
             make.top.equalTo(lotteryTextField.snp.bottom).offset(28)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(8)
             make.height.equalTo(34)
-            make.width.equalTo(100)
+            make.width.equalTo(130)
+        }
+        
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(lotteryTextField.snp.bottom).offset(28)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(8)
+            make.height.equalTo(34)
+            make.width.equalTo(130)
         }
     }
     
@@ -58,6 +66,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         lotteryTextField.backgroundColor = .lightGray
         infoLabel.backgroundColor = .red
+        dateLabel.backgroundColor = .orange
     }
     
 
