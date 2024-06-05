@@ -10,9 +10,10 @@
 		EF79C2C52C103AD2009E66BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2C42C103AD2009E66BD /* AppDelegate.swift */; };
 		EF79C2C72C103AD2009E66BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2C62C103AD2009E66BD /* SceneDelegate.swift */; };
 		EF79C2C92C103AD2009E66BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C2C82C103AD2009E66BD /* ViewController.swift */; };
-		EF79C2CC2C103AD2009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C2CB2C103AD2009E66BD /* Base */; };
 		EF79C2CE2C103AD3009E66BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF79C2CD2C103AD3009E66BD /* Assets.xcassets */; };
 		EF79C2D12C103AD3009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C2D02C103AD3009E66BD /* Base */; };
+		EF79C2DA2C103E60009E66BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C2D92C103E60009E66BD /* SnapKit */; };
+		EF79C2DD2C103E77009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C2DC2C103E77009E66BD /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +21,6 @@
 		EF79C2C42C103AD2009E66BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF79C2C62C103AD2009E66BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EF79C2C82C103AD2009E66BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EF79C2CB2C103AD2009E66BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF79C2CD2C103AD3009E66BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF79C2D02C103AD3009E66BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF79C2D22C103AD3009E66BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF79C2DA2C103E60009E66BD /* SnapKit in Frameworks */,
+				EF79C2DD2C103E77009E66BD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +61,6 @@
 				EF79C2C42C103AD2009E66BD /* AppDelegate.swift */,
 				EF79C2C62C103AD2009E66BD /* SceneDelegate.swift */,
 				EF79C2C82C103AD2009E66BD /* ViewController.swift */,
-				EF79C2CA2C103AD2009E66BD /* Main.storyboard */,
 				EF79C2CD2C103AD3009E66BD /* Assets.xcassets */,
 				EF79C2CF2C103AD3009E66BD /* LaunchScreen.storyboard */,
 				EF79C2D22C103AD3009E66BD /* Info.plist */,
@@ -83,6 +84,10 @@
 			dependencies = (
 			);
 			name = LotteryAPIProject;
+			packageProductDependencies = (
+				EF79C2D92C103E60009E66BD /* SnapKit */,
+				EF79C2DC2C103E77009E66BD /* Alamofire */,
+			);
 			productName = LotteryAPIProject;
 			productReference = EF79C2C12C103AD2009E66BD /* LotteryAPIProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,10 @@
 				Base,
 			);
 			mainGroup = EF79C2B82C103AD2009E66BD;
+			packageReferences = (
+				EF79C2D82C103E60009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EF79C2DB2C103E77009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = EF79C2C22C103AD2009E66BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +136,6 @@
 			files = (
 				EF79C2CE2C103AD3009E66BD /* Assets.xcassets in Resources */,
 				EF79C2D12C103AD3009E66BD /* Base in Resources */,
-				EF79C2CC2C103AD2009E66BD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +155,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF79C2CA2C103AD2009E66BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF79C2CB2C103AD2009E66BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EF79C2CF2C103AD3009E66BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,9 +296,9 @@
 				INFOPLIST_FILE = LotteryAPIProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +306,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seunghye.LotteryAPIProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,9 +327,9 @@
 				INFOPLIST_FILE = LotteryAPIProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +337,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seunghye.LotteryAPIProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +369,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF79C2D82C103E60009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		EF79C2DB2C103E77009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF79C2D92C103E60009E66BD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF79C2D82C103E60009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EF79C2DC2C103E77009E66BD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF79C2DB2C103E77009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF79C2B92C103AD2009E66BD /* Project object */;
 }
