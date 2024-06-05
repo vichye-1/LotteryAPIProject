@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         view.addSubview(dividerView)
         view.addSubview(countLabel)
         view.addSubview(resultLabel)
+        view.addSubview(backgroundView)
     }
     
     func configureLayout() {
@@ -83,7 +84,12 @@ class ViewController: UIViewController {
             make.trailing.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(44)
             make.width.equalTo(view.frame.width / 2)
-            
+        }
+        
+        backgroundView.snp.makeConstraints { make in
+            make.top.equalTo(resultLabel.snp.bottom).offset(28)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
+            make.height.equalTo(50)
         }
     }
     
@@ -95,6 +101,7 @@ class ViewController: UIViewController {
         dividerView.backgroundColor = .lightGray
         countLabel.backgroundColor = .yellow
         resultLabel.backgroundColor = .green
+        backgroundView.backgroundColor = .blue
     }
     
 
