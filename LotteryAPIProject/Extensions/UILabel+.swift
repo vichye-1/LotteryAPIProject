@@ -21,4 +21,15 @@ extension UILabel {
         self.textColor = .gray
         self.font = .systemFont(ofSize: 13)
     }
+    
+    func countLotteryLabelUI() {
+        self.text = "913회"
+        self.textColor = .systemYellow
+        self.textAlignment = .right
+        self.font = .boldSystemFont(ofSize: 28)
+    }
+    
+    func resultLabelUI() {
+        
+    }
 }
