@@ -121,16 +121,15 @@ class ViewController: UIViewController {
         dateLabel.dateLabelUI()
         dividerView.backgroundColor = .lightGray
         countLabel.countLotteryLabelUI()
-        resultLabel.backgroundColor = .green
-        ballStackView.backgroundColor = .blue
-        ball1Label.backgroundColor = .red
-        ball2Label.backgroundColor = .orange
-        ball3Label.backgroundColor = .yellow
-        ball4Label.backgroundColor = .green
-        ball5Label.backgroundColor = .cyan
-        ball6Label.backgroundColor = .purple
-        plusLabel.backgroundColor = .magenta
-        ball7Label.backgroundColor = .brown
+        resultLabel.resultLabelUI()
+        ball1Label.ballLabelUI()
+        ball2Label.ballLabelUI()
+        ball3Label.ballLabelUI()
+        ball4Label.ballLabelUI()
+        ball5Label.ballLabelUI()
+        ball6Label.ballLabelUI()
+        plusLabel.ballLabelUI()
+        ball7Label.ballLabelUI()
         bonusLabel.backgroundColor = .systemMint
     }
     

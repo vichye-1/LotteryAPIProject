@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UILabel {
     func infoLabelUI() {
@@ -30,6 +31,15 @@ extension UILabel {
     }
     
     func resultLabelUI() {
-        
+        self.text = " 당첨결과"
+        self.textColor = .black
+        self.textAlignment = .left
+        self.font = .systemFont(ofSize: 28)
+    }
+    
+    func ballLabelUI() {
+        self.backgroundColor = .green
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 20
     }
 }
