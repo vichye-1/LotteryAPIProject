@@ -37,18 +37,27 @@ class ViewController: UIViewController {
     
     func configureHierachy() {
         view.addSubview(lotteryTextField)
+        view.addSubview(infoLabel)
     }
     
     func configureLayout() {
         lotteryTextField.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.height.equalTo(50)
+        }
+        
+        infoLabel.snp.makeConstraints { make in
+            make.top.equalTo(lotteryTextField.snp.bottom).offset(28)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(8)
+            make.height.equalTo(34)
+            make.width.equalTo(100)
         }
     }
     
     func configureUI() {
+        view.backgroundColor = .white
         lotteryTextField.backgroundColor = .lightGray
-        
+        infoLabel.backgroundColor = .red
     }
     
 
