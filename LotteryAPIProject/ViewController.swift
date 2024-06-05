@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         view.addSubview(resultLabel)
         view.addSubview(backgroundView)
         view.addSubview(ballStackView)
+        view.addSubview(bonusLabel)
         
         for ball in balls {
             ballStackView.addArrangedSubview(ball)
@@ -106,6 +107,12 @@ class ViewController: UIViewController {
                 make.width.height.equalTo(ballStackView.snp.height)
             }
         }
+        
+        bonusLabel.snp.makeConstraints { make in
+            make.top.equalTo(ballStackView.snp.bottom).offset(4)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
+            make.height.equalTo(20)
+        }
     }
     
     func configureUI() {
@@ -125,6 +132,7 @@ class ViewController: UIViewController {
         ball6Label.backgroundColor = .purple
         plusLabel.backgroundColor = .magenta
         ball7Label.backgroundColor = .brown
+        bonusLabel.backgroundColor = .systemMint
     }
     
     func ballStackViewSettings() {
@@ -133,6 +141,4 @@ class ViewController: UIViewController {
         ballStackView.distribution = .fillEqually
         ballStackView.spacing = 4
     }
-
 }
-
