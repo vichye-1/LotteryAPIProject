@@ -129,7 +129,7 @@ class ViewController: UIViewController {
         ball6Label.ballLabelUI()
         plusLabel.plusLabelUI()
         ball7Label.ballLabelUI()
-        bonusLabel.backgroundColor = .systemMint
+        bonusLabel.bonusLabelUI()
     }
     
     func ballStackViewSettings() {

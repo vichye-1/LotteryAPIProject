@@ -57,4 +57,11 @@ extension UILabel {
         
         self.attributedText = attributedString
     }
+    
+    func bonusLabelUI() {
+        self.text = "보너스"
+        self.textAlignment = .right
+        self.textColor = .gray
+        self.font = .systemFont(ofSize: 15)
+    }
 }
