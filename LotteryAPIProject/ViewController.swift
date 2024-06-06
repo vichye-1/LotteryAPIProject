@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let infoLabel = UILabel()
     let dateLabel = UILabel()
     let dividerView = UIView()
-    let countLabel = UILabel()
+    //let countLabel = UILabel()
     let resultLabel = UILabel()
     let backgroundView = UIView()
     let ball1Label = UILabel()
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         view.addSubview(infoLabel)
         view.addSubview(dateLabel)
         view.addSubview(dividerView)
-        view.addSubview(countLabel)
+        //view.addSubview(countLabel)
         view.addSubview(resultLabel)
         view.addSubview(backgroundView)
         view.addSubview(ballStackView)
@@ -82,18 +82,17 @@ class ViewController: UIViewController {
             make.height.equalTo(1)
         }
         
-        countLabel.snp.makeConstraints { make in
-            make.top.equalTo(dividerView.snp.bottom).offset(28)
-            make.leading.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(44)
-            make.width.equalTo(view.frame.width / 2)
-        }
+//        countLabel.snp.makeConstraints { make in
+//            make.top.equalTo(dividerView.snp.bottom).offset(28)
+//            make.leading.equalTo(view.safeAreaLayoutGuide)
+//            make.height.equalTo(44)
+//            make.width.equalTo(view.frame.width / 2)
+//        }
         
         resultLabel.snp.makeConstraints { make in
             make.top.equalTo(dividerView.snp.bottom).offset(28)
-            make.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(44)
-            make.width.equalTo(view.frame.width / 2)
         }
         
         ballStackView.snp.makeConstraints { make in
@@ -120,15 +119,15 @@ class ViewController: UIViewController {
         infoLabel.infoLabelUI()
         dateLabel.dateLabelUI()
         dividerView.backgroundColor = .lightGray
-        countLabel.countLotteryLabelUI()
-        resultLabel.resultLabelUI()
+        //countLabel.countLotteryLabelUI()
+        resultLabel.countLotteryLabelUI()
         ball1Label.ballLabelUI()
         ball2Label.ballLabelUI()
         ball3Label.ballLabelUI()
         ball4Label.ballLabelUI()
         ball5Label.ballLabelUI()
         ball6Label.ballLabelUI()
-        plusLabel.ballLabelUI()
+        plusLabel.plusLabelUI()
         ball7Label.ballLabelUI()
         bonusLabel.backgroundColor = .systemMint
     }

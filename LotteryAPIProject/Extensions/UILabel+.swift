@@ -24,10 +24,14 @@ extension UILabel {
     }
     
     func countLotteryLabelUI() {
-        self.text = "913회"
-        self.textColor = .systemYellow
-        self.textAlignment = .right
-        self.font = .boldSystemFont(ofSize: 28)
+        self.text = "913회 당첨결과"
+        let fontsize = UIFont.boldSystemFont(ofSize: 28)
+        let attributedStr = NSMutableAttributedString(string: self.text ?? "")
+        attributedStr.addAttribute(.font, value: fontsize, range: (self.text as! NSString).range(of: "913회"))
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.systemYellow, range: (self.text as! NSString).range(of: "913회"))
+        //self.textColor = .systemYellow
+        self.textAlignment = .center
+        //self.font = .boldSystemFont(ofSize: 28)
     }
     
     func resultLabelUI() {
@@ -41,5 +45,16 @@ extension UILabel {
         self.backgroundColor = .green
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
+    }
+    
+    func plusLabelUI() {
+        let attributedString = NSMutableAttributedString(string: "   ")
+        let imageAttatchment = NSTextAttachment()
+        imageAttatchment.image = UIImage(systemName: "plus")
+        
+        let imageString = NSAttributedString(attachment: imageAttatchment)
+        attributedString.append(imageString)
+        
+        self.attributedText = attributedString
     }
 }
