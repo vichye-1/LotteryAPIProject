@@ -24,25 +24,19 @@ extension UILabel {
     }
     
     func countLotteryLabelUI() {
-        self.text = "913회 당첨결과"
-        let fontsize = UIFont.boldSystemFont(ofSize: 28)
-        let attributedStr = NSMutableAttributedString(string: self.text ?? "")
-        attributedStr.addAttribute(.font, value: fontsize, range: (self.text as! NSString).range(of: "913회"))
-        attributedStr.addAttribute(.foregroundColor, value: UIColor.systemYellow, range: (self.text as! NSString).range(of: "913회"))
-        //self.textColor = .systemYellow
+        self.text = "1122회 당첨결과"
+        self.font = .boldSystemFont(ofSize: 24)
         self.textAlignment = .center
-        //self.font = .boldSystemFont(ofSize: 28)
-    }
-    
-    func resultLabelUI() {
-        self.text = " 당첨결과"
-        self.textColor = .black
-        self.textAlignment = .left
-        self.font = .systemFont(ofSize: 28)
+//        let fontsize = UIFont.boldSystemFont(ofSize: 28)
+//        let attributedStr = NSMutableAttributedString(string: self.text ?? "")
+//        attributedStr.addAttribute(.font, value: fontsize, range: (self.text as! NSString).range(of: "1122회"))
+//        attributedStr.addAttribute(.foregroundColor, value: UIColor.systemYellow, range: (self.text as! NSString).range(of: "1122회"))
+//        self.textColor = .systemYellow
+//        self.font = .boldSystemFont(ofSize: 28)
     }
     
     func ballLabelUI() {
-        self.backgroundColor = .green
+        self.backgroundColor = .systemYellow
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
         self.textAlignment = .center

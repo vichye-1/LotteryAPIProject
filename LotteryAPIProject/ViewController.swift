@@ -23,11 +23,10 @@ struct Lotto: Decodable {
 
 class ViewController: UIViewController {
     
-    let lotteryTextField = UITextField()
+    var lotteryTextField = UITextField()
     let infoLabel = UILabel()
     let dateLabel = UILabel()
     let dividerView = UIView()
-    //let countLabel = UILabel()
     let resultLabel = UILabel()
     let backgroundView = UIView()
     let ball1Label = UILabel()
@@ -53,6 +52,7 @@ class ViewController: UIViewController {
         configureUI()
         ballStackViewSettings()
         configurePickerView()
+        // latestRound()
     }
     
     func configureHierachy() {
@@ -61,7 +61,6 @@ class ViewController: UIViewController {
         view.addSubview(infoLabel)
         view.addSubview(dateLabel)
         view.addSubview(dividerView)
-        //view.addSubview(countLabel)
         view.addSubview(resultLabel)
         view.addSubview(backgroundView)
         view.addSubview(ballStackView)
@@ -98,13 +97,6 @@ class ViewController: UIViewController {
             make.height.equalTo(1)
         }
         
-//        countLabel.snp.makeConstraints { make in
-//            make.top.equalTo(dividerView.snp.bottom).offset(28)
-//            make.leading.equalTo(view.safeAreaLayoutGuide)
-//            make.height.equalTo(44)
-//            make.width.equalTo(view.frame.width / 2)
-//        }
-        
         resultLabel.snp.makeConstraints { make in
             make.top.equalTo(dividerView.snp.bottom).offset(28)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
@@ -130,9 +122,7 @@ class ViewController: UIViewController {
         
         numberPicker.snp.makeConstraints { make in
             make.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            
         }
-        
     }
     
     func configureUI() {
@@ -141,7 +131,6 @@ class ViewController: UIViewController {
         infoLabel.infoLabelUI()
         dateLabel.dateLabelUI()
         dividerView.backgroundColor = .lightGray
-        //countLabel.countLotteryLabelUI()
         resultLabel.countLotteryLabelUI()
         ball1Label.ballLabelUI()
         ball2Label.ballLabelUI()
@@ -187,7 +176,30 @@ class ViewController: UIViewController {
             ballLabels[idx].backgroundColor = ballColors(ballNum: num)
         }
         dateLabel.text = "\(num.drwNoDate) 추첨"
+        resultLabel.text = "\(num.drwNo)회 당첨결과"
     }
+    
+//    func latestRound() {
+//        let maxRound = 1150
+//        
+//        func checklatest(round: Int) {
+//            let url = "\(APIURL.lottoURL)\(round)"
+//            AF.request(url).responseDecodable(of: Lotto.self) { response in
+//                switch response.result {
+//                case .success(let value):
+//                    self.selectedRound = value.drwNo
+//                    self.lotteryTextField.text = "\(value.drwNo)"
+//                    self.updateBalls(num: value)
+//                case .failure(let error):
+//                    if round > 1 {
+//                        checklatest(round: round - 1)
+//                    } else {
+//                        print("error")
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -220,7 +232,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         AF.request(url).responseDecodable(of: Lotto.self) { response in
             switch response.result {
             case .success(let value):
-                // print(value.drwNoDate)
                 self.updateBalls(num: value)
             case .failure(let error):
                 print(error)
