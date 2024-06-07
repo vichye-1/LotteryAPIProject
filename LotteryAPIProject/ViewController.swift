@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     let numberPicker = UIPickerView()
     
     lazy var balls = [ball1Label, ball2Label, ball3Label, ball4Label, ball5Label, ball6Label, plusLabel, ball7Label]
+    var lotteryRound = Array(1...1122)
+    var selectedRound: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +52,12 @@ class ViewController: UIViewController {
         configureLayout()
         configureUI()
         ballStackViewSettings()
+        configurePickerView()
     }
     
     func configureHierachy() {
         view.addSubview(lotteryTextField)
+        view.addSubview(numberPicker)
         view.addSubview(infoLabel)
         view.addSubview(dateLabel)
         view.addSubview(dividerView)
@@ -123,6 +127,11 @@ class ViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.height.equalTo(20)
         }
+        
+        numberPicker.snp.makeConstraints { make in
+            make.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
     }
     
     func configureUI() {
@@ -149,5 +158,43 @@ class ViewController: UIViewController {
         ballStackView.alignment = .fill
         ballStackView.distribution = .fillEqually
         ballStackView.spacing = 4
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func configurePickerView() {
+        numberPicker.delegate = self
+        numberPicker.dataSource = self
+        lotteryTextField.inputView = numberPicker
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return lotteryRound.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(lotteryRound[row])"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRound = lotteryRound[row]
+        lotteryTextField.text = "\(lotteryRound[row])"
+        getLottoInfo(round: lotteryRound[row])
+    }
+    
+    func getLottoInfo(round: Int) {
+        let url = "\(APIURL.lottoURL)\(lotteryTextField.text!)"
+        AF.request(url).responseDecodable(of: Lotto.self) { response in
+            switch response.result {
+            case .success(let value):
+                print(value.drwNoDate)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

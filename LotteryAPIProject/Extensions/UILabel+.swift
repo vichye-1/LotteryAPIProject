@@ -48,14 +48,9 @@ extension UILabel {
     }
     
     func plusLabelUI() {
-        let attributedString = NSMutableAttributedString(string: "   ")
-        let imageAttatchment = NSTextAttachment()
-        imageAttatchment.image = UIImage(systemName: "plus")
-        
-        let imageString = NSAttributedString(attachment: imageAttatchment)
-        attributedString.append(imageString)
-        
-        self.attributedText = attributedString
+        self.text = "+"
+        self.textAlignment = .center
+        self.font = UIFont.systemFont(ofSize: 20)
     }
     
     func bonusLabelUI() {
