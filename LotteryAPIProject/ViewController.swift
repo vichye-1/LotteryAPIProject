@@ -180,13 +180,14 @@ class ViewController: UIViewController {
     }
     
 //    func latestRound() {
-//        let maxRound = 1150
-//        
+//        var maxRound = 1122
+//
 //        func checklatest(round: Int) {
 //            let url = "\(APIURL.lottoURL)\(round)"
 //            AF.request(url).responseDecodable(of: Lotto.self) { response in
 //                switch response.result {
 //                case .success(let value):
+//                    checklatest(round: round + 1)
 //                    self.selectedRound = value.drwNo
 //                    self.lotteryTextField.text = "\(value.drwNo)"
 //                    self.updateBalls(num: value)
