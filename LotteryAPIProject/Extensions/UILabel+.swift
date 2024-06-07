@@ -45,6 +45,8 @@ extension UILabel {
         self.backgroundColor = .green
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
+        self.textAlignment = .center
+        self.font = .systemFont(ofSize: 17)
     }
     
     func plusLabelUI() {

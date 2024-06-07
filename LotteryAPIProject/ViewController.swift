@@ -159,6 +159,17 @@ class ViewController: UIViewController {
         ballStackView.distribution = .fillEqually
         ballStackView.spacing = 4
     }
+    
+    func updateBalls(num: Lotto) {
+        ball1Label.text = "\(num.drwtNo1)"
+        ball2Label.text = "\(num.drwtNo2)"
+        ball3Label.text = "\(num.drwtNo3)"
+        ball4Label.text = "\(num.drwtNo4)"
+        ball5Label.text = "\(num.drwtNo5)"
+        ball6Label.text = "\(num.drwtNo6)"
+        ball7Label.text = "\(num.bnusNo)"
+        dateLabel.text = "\(num.drwNoDate) 추첨"
+    }
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -191,7 +202,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         AF.request(url).responseDecodable(of: Lotto.self) { response in
             switch response.result {
             case .success(let value):
-                print(value.drwNoDate)
+                // print(value.drwNoDate)
+                self.updateBalls(num: value)
             case .failure(let error):
                 print(error)
             }
