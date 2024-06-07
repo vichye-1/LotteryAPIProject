@@ -130,6 +130,7 @@ class ViewController: UIViewController {
         
         numberPicker.snp.makeConstraints { make in
             make.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            
         }
         
     }
@@ -160,14 +161,31 @@ class ViewController: UIViewController {
         ballStackView.spacing = 4
     }
     
+    func ballColors(ballNum: Int) -> UIColor {
+        switch ballNum {
+        case 1...10:
+            return .systemYellow
+        case 11...20:
+            return .systemCyan
+        case 21...30:
+            return .systemPink
+        case 31...40:
+            return .gray
+        case 41...45:
+            return .systemGreen
+        default:
+            return .lightGray
+        }
+    }
+    
     func updateBalls(num: Lotto) {
-        ball1Label.text = "\(num.drwtNo1)"
-        ball2Label.text = "\(num.drwtNo2)"
-        ball3Label.text = "\(num.drwtNo3)"
-        ball4Label.text = "\(num.drwtNo4)"
-        ball5Label.text = "\(num.drwtNo5)"
-        ball6Label.text = "\(num.drwtNo6)"
-        ball7Label.text = "\(num.bnusNo)"
+        let numbers = [num.drwtNo1, num.drwtNo2, num.drwtNo3, num.drwtNo4, num.drwtNo5, num.drwtNo6, num.bnusNo]
+        let ballLabels = [ball1Label, ball2Label, ball3Label, ball4Label, ball5Label, ball6Label, ball7Label]
+        
+        for (idx, num) in numbers.enumerated() {
+            ballLabels[idx].text = "\(num)"
+            ballLabels[idx].backgroundColor = ballColors(ballNum: num)
+        }
         dateLabel.text = "\(num.drwNoDate) 추첨"
     }
 }

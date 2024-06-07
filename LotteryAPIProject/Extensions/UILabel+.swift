@@ -19,7 +19,7 @@ extension UILabel {
     func dateLabelUI() {
         self.text = "2020-05-30 추첨"
         self.textAlignment = .right
-        self.textColor = .gray
+        self.textColor = .darkGray
         self.font = .systemFont(ofSize: 13)
     }
     
@@ -46,7 +46,8 @@ extension UILabel {
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
         self.textAlignment = .center
-        self.font = .systemFont(ofSize: 17)
+        self.font = .boldSystemFont(ofSize: 17)
+        self.textColor = .white
     }
     
     func plusLabelUI() {
