@@ -24,6 +24,7 @@ struct Lotto: Decodable {
 class ViewController: UIViewController {
     
     var lotteryTextField = UITextField()
+    let invisibleView = UIView()
     let infoLabel = UILabel()
     let dateLabel = UILabel()
     let dividerView = UIView()
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
     let numberPicker = UIPickerView()
     
     lazy var balls = [ball1Label, ball2Label, ball3Label, ball4Label, ball5Label, ball6Label, plusLabel, ball7Label]
-    var lotteryRound = Array(1...1122)
+    var lotteryRound = (Array(Array(1...1122).reversed()))
     var selectedRound: Int?
     
     override func viewDidLoad() {
@@ -52,7 +53,9 @@ class ViewController: UIViewController {
         configureUI()
         ballStackViewSettings()
         configurePickerView()
-        // latestRound()
+        if let first = lotteryRound.first {
+            getLottoInfo(round: first)
+        }
     }
     
     func configureHierachy() {
@@ -132,16 +135,21 @@ class ViewController: UIViewController {
         dateLabel.dateLabelUI()
         dividerView.backgroundColor = .lightGray
         resultLabel.countLotteryLabelUI()
-        ball1Label.ballLabelUI()
-        ball2Label.ballLabelUI()
-        ball3Label.ballLabelUI()
-        ball4Label.ballLabelUI()
-        ball5Label.ballLabelUI()
-        ball6Label.ballLabelUI()
-        plusLabel.plusLabelUI()
-        ball7Label.ballLabelUI()
+        
+        DispatchQueue.main.async {
+            self.ball1Label.ballLabelUI()
+            self.ball2Label.ballLabelUI()
+            self.ball3Label.ballLabelUI()
+            self.ball4Label.ballLabelUI()
+            self.ball5Label.ballLabelUI()
+            self.ball6Label.ballLabelUI()
+            self.plusLabel.plusLabelUI()
+            self.ball7Label.ballLabelUI()
+        }
         bonusLabel.bonusLabelUI()
     }
+    
+    
     
     func ballStackViewSettings() {
         ballStackView.axis = .horizontal
@@ -168,6 +176,7 @@ class ViewController: UIViewController {
     }
     
     func updateBalls(num: Lotto) {
+        
         let numbers = [num.drwtNo1, num.drwtNo2, num.drwtNo3, num.drwtNo4, num.drwtNo5, num.drwtNo6, num.bnusNo]
         let ballLabels = [ball1Label, ball2Label, ball3Label, ball4Label, ball5Label, ball6Label, ball7Label]
         
@@ -229,7 +238,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func getLottoInfo(round: Int) {
-        let url = "\(APIURL.lottoURL)\(lotteryTextField.text!)"
+        let url = "\(APIURL.lottoURL)\(round)"
         AF.request(url).responseDecodable(of: Lotto.self) { response in
             switch response.result {
             case .success(let value):

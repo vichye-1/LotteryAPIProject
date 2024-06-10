@@ -38,7 +38,7 @@ extension UILabel {
     func ballLabelUI() {
         self.backgroundColor = .systemYellow
         self.clipsToBounds = true
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = self.frame.width / 2
         self.textAlignment = .center
         self.font = .boldSystemFont(ofSize: 17)
         self.textColor = .white
