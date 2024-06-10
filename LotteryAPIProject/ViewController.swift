@@ -5,6 +5,10 @@
 //  Created by 양승혜 on 6/5/24.
 //
 
+// 1. 커서 없애기
+// 2. 텍스트필드 위에 투명한 뷰 올려서 사용자 입력 막기
+// 3. 화면 터치했을 때 피커뷰 내려가게
+
 import UIKit
 import Alamofire
 import SnapKit
@@ -43,7 +47,7 @@ class ViewController: UIViewController {
     let numberPicker = UIPickerView()
     
     lazy var balls = [ball1Label, ball2Label, ball3Label, ball4Label, ball5Label, ball6Label, plusLabel, ball7Label]
-    var lotteryRound = (Array(Array(1...1122).reversed()))
+    var lotteryRound = Array(Array(1...1122).reversed())
     var selectedRound: Int?
     
     override func viewDidLoad() {

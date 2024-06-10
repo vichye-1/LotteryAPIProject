@@ -13,5 +13,6 @@ extension UITextField {
         self.borderStyle = .roundedRect
         self.textAlignment = .center
         self.placeholder = "회차를 선택하세요"
+        self.tintColor = .clear
     }
 }
